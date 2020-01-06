@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 from pontosTuristicos.api.viewsets import PontoTuristicoViewSets
@@ -17,4 +19,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)), #rest_framework
     path('', include('comentario.urls')), #rest_framework
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Carregar imagem do Upload
+
