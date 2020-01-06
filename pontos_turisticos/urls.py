@@ -5,17 +5,16 @@ from pontosTuristicos.api.viewsets import PontoTuristicoViewSets
 from atracoes.api.viewsets import AtracoesViewSets
 from localizacao.api.viewsets import LocalizacaoViewSets
 from avaliacoes.api.viewsets import  AvaliacaoViewSets
-from comentario.api.viewsets import  ComentarioViewSets
 
 router = routers.DefaultRouter()
-router.register('pontosTuristicos', PontoTuristicoViewSets) 
+router.register('pontosTuristicos', PontoTuristicoViewSets, basename = 'PontoTuristico') 
 router.register('atracoes', AtracoesViewSets) # EndPoint 
 router.register('localizacao', LocalizacaoViewSets) # EndPoint 
 router.register('Avaliacao', AvaliacaoViewSets) # EndPoint 
-router.register('comentario', ComentarioViewSets) # EndPoint 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)) #rest_framework
+    path('', include(router.urls)), #rest_framework
+    path('', include('comentario.urls')), #rest_framework
 ]
