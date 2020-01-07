@@ -15,6 +15,6 @@ class PontoTuristico (models.Model):
     foto = models.ImageField(upload_to='pontos_turisticos_img', null=True, blank=True)
 
     def __str__ (self):
-        return self.nome
+        return self.nome + str(self.localizacao)
 
 
