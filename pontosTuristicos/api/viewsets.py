@@ -11,7 +11,9 @@ from django_filters.rest_framework import DjangoFilterBackend #Adicionar no app 
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 
+
 class PontoTuristicoViewSets (ModelViewSet):
+    
     queryset = PontoTuristico.objects.all()
     #queryset = PontoTuristico.objects.all()
     serializer_class = PontosTuristicosSerializer  # import do arq serializers
