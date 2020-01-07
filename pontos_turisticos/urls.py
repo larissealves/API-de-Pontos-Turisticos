@@ -7,6 +7,8 @@ from pontosTuristicos.api.viewsets import PontoTuristicoViewSets
 from atracoes.api.viewsets import AtracoesViewSets
 from localizacao.api.viewsets import LocalizacaoViewSets
 from avaliacoes.api.viewsets import  AvaliacaoViewSets
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 router = routers.DefaultRouter()
 router.register('pontosTuristicos', PontoTuristicoViewSets, basename = 'PontoTuristico') 
@@ -19,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)), #rest_framework
     path('', include('comentario.urls')), #rest_framework
+    path('api-token-auth', obtain_auth_token),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Carregar imagem do Upload
 

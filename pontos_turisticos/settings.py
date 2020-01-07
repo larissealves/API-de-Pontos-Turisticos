@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'rest_framework', 
+    'rest_framework.authtoken', # Não precisa instalar, só adc no App
     'django_filters',
     'pontosTuristicos',
     'atracoes',
